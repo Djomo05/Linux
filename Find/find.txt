@@ -1,0 +1,68 @@
+########################
+SUMMARY - Find Command
+########################
+
+
+#############################################
+1. The find command can be used to execute sophisticated search tasks.
+2. You can search by -name, -type, -size and so much more ( see man page).
+3. You can use the -exec option to execute another command on each of the result - remember to end with \;
+#############################################
+
+
+
+find .
+
+# We can use the find command to find for command by name like this 
+===> Run "find . -name "landry.txt" will output all absolute path of where the name landry.txt exist.
+
+# By default the find command is case-sensitive with the option name so if we want to make it 
+# case-insensitive, we should simply use the -iname instead of the -name option 
+===> Run "find . -iname "landry.txt" will output all the absolute path of where the name landry.txt ( with either uppercase or lowercase )
+
+
+# To search for all the folder in the current directory you can do
+===> Run "find ."  or just enter "find" on that location
+
+# To search for all the folder
+===> Run "find -type d"
+
+# To search for all the file 
+===> Run "find -type f"
+
+# To search for a file size simple
+===> Run "find -size +100k" will return all the file where the size is higher than 100k
+
+# Sometimes we might encounter some error about "Permission Denied" we can prefix our command with
+# The sudo keyword to grant access to the current user to read the files/Folders
+===> Run "sudo . -maxdepth 10 -type f -size 100k"
+
+# To get the number of line our find command should output we can pipe the result with the <wc> stands for 
+# Word count command with the command line option -l
+===> Run "sudo . -maxdepth 10 -type f -size 100M | wc -l"
+
+# We can chain different size like this 
+==> Run "sudo find / -type f -size +100k -size -5M | wc -l"
+
+# we can use the option OR with the -o
+==> Run "sudo find / -type f -size -100k -o -size +5M | wc -l" will count all the file where the size is either less than 100k or bigger than 5M
+
+# We use the -exec command line option to copy each output line from the find command to a sepcific location
+===> Run "sudo find / -type f -size +100k -size -5M -exec cp {}  copy_here \;"
+
+# We use this "\;" to end the command 
+
+# The above command will find all the file in out file system that are between 100K and 5M then each of those file will be copy in the copy_here folder
+
+
+# To generate a random number between a number range, we can use the shuf command 
+===> Run "shuf -i 1-500 -n 1" will output a random number between 1 to 500
+
+# To create a file in a random folder we can do this
+===> Run "touch folder$(shuf -i 1-500 -n 1)/needle.txt" this will create a file in a random folder
+
+
+
+
+
+
