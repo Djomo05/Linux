@@ -1,0 +1,49 @@
+##############
+SUMMARY - Sort
+##############
+
+#################################################################
+1. You can "sort data" using the "sort" command.
+2. The "sort" command tends to sort "smallest first" (a-z,0-9 etc).
+3. You can "reverse" this using the "-r" option.
+4. To sort "numerically" give the -n option.
+#################################################################
+
+
+##############################################################
+1. You can "sort tabular data using the -k option
+2. You need to give the -k option a KEYDEF.
+3. 3nr means sort using column 3, and use the -n and -r options.
+4. To sort human-readable data use the -h option not -n.
+5. To sort month data use the -M option.
+6. Order of options in the KEYDEF don't matter ( as usual).
+###############################################################
+
+# The "sort" command allow us to sort data in a variaty of different way.
+==> Run "sort word.txt" will sort vertically 
+
+# To reverse a sort we can do :
+===> Run "sort -r word.txt" by using the -r option
+===> Run "sort word.txt | tac" by using the tac command 
+
+# To sort number we should use the -n option
+===> Run "sort -n word.txt"
+
+# To only have a unique result we should use the -u option
+===> Run the "sort -u word.txt"
+
+# We can use the sort command to sort on a table like this 
+===> Run "ls -l /etc | head -n 20 | sort -5n" will output all the 20 first content of the etc folder and sorted numerically by the fifth colum
+
+# If we're using the -h argument for human readable format in the ls command, and 
+# we want to sort by the size of file, we should replace the n option by the h option
+===> Run "ls -lh /etc | head -n 20 | sort -5h"
+
+# To sort by month on the output of the "ls" command we can do this:
+===> Run "ls -lh /etc | head -n 20 | sort -6M"
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+#####################################################
+SUMMARY - cat, tac, rev, less, head and tail commands
+#####################################################
+
+
+####################################################
+1. You can join files together using the cat command
+2. Reverse files vertically using the tac command
+3. Reverse files horizontally using the rev command
+4. Use less to page through large amounts of output.
+5. Use head and tail to cut out just what you want.
+####################################################
+
+
+# the "cat" command allow us to read the file content
+# the "tac" command allow us to read the file content of the text in reverse ( last to first vertically )
+
+# the "rev" allow us to reverse a file content on each line
+
+

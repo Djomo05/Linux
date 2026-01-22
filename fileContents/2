@@ -1,0 +1,6 @@
+# the "cat" command allow us to read the file content
+# the "tac" command allow us to read the file content of the text in reverse ( last to first vertically )
+
+# the reversed allow us to reverse a file content on each line
+
+
