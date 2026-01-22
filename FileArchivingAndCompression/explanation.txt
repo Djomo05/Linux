@@ -1,0 +1,78 @@
+#############################################################################
+1. Tarballs are containers to store files in for compression
+2. Tarballs can be compressed using various compression algoritms.
+3. gzip and bzip2 are common options on Linux. xz is another option.
+4. You can also use the zip and unzip commands to create/extract .zip files.
+5. Saw how to do archiving and compression in one step.
+#############################################################################
+
+
+When you're compressing and archiving files in Linux, The first thing you need to know about is
+something called 
+a tarball. Now, I want you to imagine that you're at a shopping center or to your local store and you're 
+buying some apples, okay? Now let me ask you a question. How would you make those apples after picking 
+them up easier to carry? well you'd put them in a bag, right? And that's what creating a tarball is basically 
+doing. Okay, so creating a tarball is basically a way of putting your files in a bag to make them easier to
+compress and make them easier to store, okay? And when you add files to a tarball, you make it possible to
+store all of your files in one place. And the tarball itself doesn't do any compression. But tarballs can be
+compressed using compression algorighms, okay?
+
+# To create our tarball we can do this
+===> Run "tar -cvf ourarchive.tar file[1-3]" this will create it and putt our 3 files in it.
+
+# To test our tarball we can simple do
+===> Run "tar -tf ourarchive.tar" this show the content in our tarball file
+
+# To extract our tarball file we can simple do 
+===> Run "tar -xvf ourarchive.tar" this will extract our archive file
+
+
+# The main compression algorithm in Linux is "gzip and bzip2" 
+
+# gzip: is faster but has less compression power.
+# bzip2: on the other hand, can generally compress files to a smaller size than gzip but does requires
+# more computational time.
+
+#######################################
+# Compression is a two stage thing,
+# First we make a tarball and then we compress that tarball
+# With a compression algorithm ( gzip or bzip2 )
+######################################
+
+# After generating our tarball file we can then use the "gzip" command to compress that file
+===> Run "gzip ourarchive.tar"
+
+# To reverse the "gzip" to get our tarball file back we can do:
+===> Run "gunzip ourarchive.tar.gz"
+
+# To compress our tarball file using the bzip2 command we can do:
+===> Run "bzip2 ourarchive.targ"
+
+# To unzip our bzip2 compress file we can simply do:
+===> Run "bunzip2 ourarchive.tar"
+
+# We can also have the "xz" algorithm compression
+
+# To zip our file we can also use the "zip" command
+===> Run "zip ourzip.zip file1.txt file2.txt file3.txt"
+
+# To unzip a file zip with a zip command we can do:
+===> Run "unzip ourzip.zip"
+
+
+# To put file in a tarball and compress it we can use a tar command like this:
+===> Run "tar -cvzf ourarchive.tar.gz file[1-3].txt" this will directly put all the file in a tarball
+then, zip with with the gzip algorithm because we've used the z option on the tar command"
+
+# To compress with the bzip2 command we can do:
+===> Run "tar -cvjf ourarchive.tar.bz2 file[1-3].txt"
+
+
+# To extract file compressed with a "gzip" algorithm
+===> Run "tar -xvzf ourarchive.tar.gz"
+
+# To extract a file compressed with a "bzip2" algorithm
+===> Run "tar -xvjf ourarchive.tar.bz2"
+
+
+
